@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import Letters from './Letters'
 import Sentence from './Sentence';
+import Winner from './Winner';
 
 export default function Guess(props) {
   const [guess, setGuess] = useState('')
@@ -39,30 +40,47 @@ export default function Guess(props) {
     return true
   }
 
+  const findWinner = (phraseArray, guesses, alphabet, currentGuess) => {
+    for (let i = (phraseArray.length - 1); i >= 0; i--) {
+      if (guesses.includes(phraseArray[i])) {
+        phraseArray.splice(i, 1)
+      }
+      if (currentGuess === phraseArray[i]) {
+        phraseArray.splice(i, 1)
+      }
+
+    }
+
+    for (let j = 0; j < phraseArray.length; j++) {
+      if (alphabet.includes(phraseArray[j])) {
+        return false
+      }
+    }
+    return true
+  }
+
   const submitGuess = (event) => {
     let currentGuess = event.target.value.toLowerCase()
-    // console.log('currentGuess', currentGuess)
     if (checkGuess(currentGuess, props.state.lettersGuessed, props.state.allLetters)) {
-      console.log("check passed")
       setGuess('')
       props.state.currentGuess = currentGuess
-      // props.state.lettersGuessed.push(currentGuess)
       setState((prev) => ({...prev, lettersGuessed: [...prev.lettersGuessed, currentGuess]}))
-      //Here I can check to see if it's a correct guess or not
       const phraseArray = [...props.state.phrase.toLowerCase()]
-      // console.log("phraseArray: ", phraseArray)
-      // console.log("currentGuess: ", currentGuess)
-      if (!phraseArray.includes(currentGuess)) {
 
+      if (!phraseArray.includes(currentGuess)) {
         setState((prev) => ({...prev, incorrect: [...prev.incorrect, currentGuess]}))
-        console.log("state", state)
+      }
+
+      if (findWinner(phraseArray, props.state.lettersGuessed, props.state.allLetters, props.state.currentGuess)) {
+        console.log("Winner")
+        setState((prev) => ({...prev, winner: true}))
       }
       return
     }
     return alert("Please submit a valid guess")
   }
 
-  if (state.lettersGuessed.length >= 9) {
+  if (state.incorrect.length >= 9) {
     return(
       <section className='lostContainer'>
         <h1>YOU LOST!</h1>
@@ -74,6 +92,7 @@ export default function Guess(props) {
 
   return(
     <section>
+      {props.state.winner && <Winner />}
       <Sentence state={state} useState={useState}/>
       <Letters state={state}/>
       <input type='text' id='guess' name='guess' onChange={handleGuess} value={guess}/>

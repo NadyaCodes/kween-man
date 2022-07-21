@@ -7,7 +7,6 @@ export default function LetterItem(props) {
   useEffect(() => {
     for (let letter of props.state.lettersGuessed) {
       if (letter === props.letter) {
-        console.log(letter)
         setClassName('letterGuesser guessed')
       }
     }
