@@ -4,6 +4,7 @@ import ProgressQueen from './ProgressQueen';
 import Sentence from './Sentence';
 import Letters from './Letters';
 import Guess from './Guess';
+import Error from './Error';
 import {useEffect, useState} from 'react';
 import axios from 'axios';
 
@@ -11,7 +12,7 @@ function App() {
   const allLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
   const [state, setState] = useState({lettersGuessed: [], phrase: '', allLetters, currentGuess: '', incorrect: []})
-
+  const [err, setErr] = useState('')
 
 
   useEffect(() => {
@@ -19,7 +20,7 @@ function App() {
     const fetchPhrase = async () => {
       axios.get(`https://www.nokeynoshade.party/api/episodes/${randomEpisode}`).then((data) => {
         setState((prev) => ({...prev, phrase: data.data.title}))
-      })
+      }).catch((err) => (setErr(err)))
     }
     
     fetchPhrase()
@@ -45,6 +46,7 @@ function App() {
         </a> */}
       </header>
       <main>
+        {err && <Error />}
         <ProgressQueen state={state}/>
         {/* <Sentence state={state}/> */}
         {/* <Letters state={state}/> */}
