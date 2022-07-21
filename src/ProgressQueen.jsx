@@ -16,6 +16,18 @@ export default function ProgressQueen(props) {
     'https://www.nokeynoshade.party/images/nina-west.jpg'
   ]
 
+  const letterArray = [
+    'Q',
+    'W',
+    'E',
+    'E',
+    'N',
+    '-',
+    'M',
+    'A',
+    'N'
+  ]
+
   const displayPics = props.state.incorrect.map((guess, index) => {
     // console.log("props.state", props.state)
 
@@ -24,9 +36,17 @@ export default function ProgressQueen(props) {
     )
   })
 
+  const displayLetters = props.state.incorrect.map((guess, index) => {
+    return(letterArray[index])
+  })
+
   return(
-    <article className="qweens">
-      {props.state.lettersGuessed && displayPics}
-    </article>
+    <section>
+              <h2 className='giant-text'>{displayLetters}</h2>
+      <article className="qweens">
+
+        {props.state.lettersGuessed && displayPics}
+      </article>
+    </section>
   )
 }

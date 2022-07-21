@@ -24,7 +24,7 @@ function App() {
     }
     
     fetchPhrase()
-    console.log(state)
+    // console.log(state)
   }, [])
 
   
@@ -52,8 +52,9 @@ function App() {
 
         {/* <Sentence state={state}/> */}
         {/* <Letters state={state}/> */}
-        <Guess state={state} setState={setState}/>
         <ProgressQueen state={state}/>
+        <Guess state={state} setState={setState}/>
+        
       </main>
     </div>
   );

@@ -3,7 +3,6 @@ export default function SentenceItem(props) {
   const [show, setShow] = useState(false)
   const {currentGuess, allLetters} = props.state
 
-  // ({lettersGuessed: [], phrase: '', allLetters, currentGuess: ''})
   const currentLetter = props.letter.toLowerCase()
   let finalLetter = props.letter
 
@@ -24,8 +23,8 @@ export default function SentenceItem(props) {
 
   return(<div className="letter">
     {(show === true) ? finalLetter : '__'}
-    <br/>
-    {props.letter}
+    {/* <br/>
+    {props.letter} */}
     {/* <br/>
     Current Guess: {currentGuess} */}
     </div>)
