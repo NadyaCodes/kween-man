@@ -5,19 +5,19 @@ export default function ProgressQueen(props) {
 
 
   const queensArray = [
-    'http://www.nokeynoshade.party/images/pandora-boxx.jpg',
+    'http://www.nokeynoshade.party/images/nina-flowers.jpg',
     'http://www.nokeynoshade.party/images/yara-sofia.jpg',
     'http://www.nokeynoshade.party/images/latrice-royale.jpg',
     'http://www.nokeynoshade.party/images/benda-la-creme.jpg',
     'https://vignette4.wikia.nocookie.net/logosrupaulsdragrace/images/3/34/CynthiaS9.jpg',
     'http://www.nokeynoshade.party/images/valentina.jpg',
     'http://www.nokeynoshade.party/images/monet_x_change.jpg',
-    'https://www.nokeynoshade.party/images/nina-west.jpg',
-    'http://www.nokeynoshade.party/images/ivy-winters.jpg'
+    'http://www.nokeynoshade.party/images/ivy-winters.jpg',
+    'https://www.nokeynoshade.party/images/nina-west.jpg'
   ]
 
   const displayPics = props.state.incorrect.map((guess, index) => {
-    console.log("props.state", props.state)
+    // console.log("props.state", props.state)
 
     return (
       <ProgressQueenItem pic={queensArray[index]} key={index}/>

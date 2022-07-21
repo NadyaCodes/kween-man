@@ -62,7 +62,7 @@ export default function Guess(props) {
     return alert("Please submit a valid guess")
   }
 
-  if (state.lettersGuessed.length >= 9) {
+  if (state.lettersGuessed.length > 9) {
     return(
       <section>
         <img src="http://www.nokeynoshade.party/images/ivy-winters.jpg" />
