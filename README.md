@@ -23,3 +23,11 @@ Dependencies include:
   * axios
   * react
   * react-player
+
+## Screenshots
+
+![Qween-Man Screenshot 1](https://github.com/NadyaCodes/kween-man/blob/875ce13baf5e3b9e40025d812d19ee088a0d2541/docs/Qween-Man%20Screenshot%201.png?raw=true)
+![Qween-Man Screenshot 2](https://github.com/NadyaCodes/kween-man/blob/875ce13baf5e3b9e40025d812d19ee088a0d2541/docs/Qween-Man%20screenshot%202.png?raw=true)
+![Qween-Man Screenshot 3](https://github.com/NadyaCodes/kween-man/blob/875ce13baf5e3b9e40025d812d19ee088a0d2541/docs/Qween-Man%20Screenshot%203.png?raw=true)
+
+
