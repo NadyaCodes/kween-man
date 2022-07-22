@@ -1,7 +1,9 @@
 export default function PlayAgain() {
-  return(
+  return (
     <div>
-      <button onClick={() => window.location.reload()} className='playAgain'>Play Again</button>
+      <button onClick={() => window.location.reload()} className="playAgain">
+        Play Again
+      </button>
     </div>
-  )
+  );
 }

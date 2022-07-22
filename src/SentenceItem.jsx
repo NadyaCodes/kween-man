@@ -1,25 +1,22 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from "react";
 export default function SentenceItem(props) {
-  const [show, setShow] = useState(false)
-  const {currentGuess, allLetters} = props.state
+  const [show, setShow] = useState(false);
+  const { currentGuess, allLetters } = props.state;
 
-  const currentLetter = props.letter.toLowerCase()
-  let finalLetter = props.letter
+  const currentLetter = props.letter.toLowerCase();
+  let finalLetter = props.letter;
 
   useEffect(() => {
     if (allLetters.includes(currentLetter)) {
       if (currentGuess === currentLetter) {
-        console.log("current guess is right")
-        setShow(true)
+        console.log("current guess is right");
+        setShow(true);
       }
     }
     if (!allLetters.includes(currentLetter)) {
-      setShow(true)
+      setShow(true);
     }
+  }, [currentGuess]);
 
-  }, [currentGuess])
-
-  return(<div className="letter">
-    {(show === true) ? finalLetter : '__'}
-    </div>)
+  return <div className="letter">{show === true ? finalLetter : "__"}</div>;
 }

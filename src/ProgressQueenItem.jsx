@@ -1,7 +1,7 @@
 export default function ProgressQueenItem(props) {
-  return(
+  return (
     <div className="qweenContainer">
       <img src={props.pic} />
     </div>
-  )
+  );
 }

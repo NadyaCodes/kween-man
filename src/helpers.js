@@ -1,13 +1,12 @@
 const checkGuess = (guess, arr, letters) => {
-  const lowerGuess = guess.toLowerCase()
+  const lowerGuess = guess.toLowerCase();
   let sameLetter = false;
 
   if (arr.length > 0) {
     for (let a of arr) {
       if (a === lowerGuess) {
-        return false
+        return false;
       }
-
     }
   }
 
@@ -21,28 +20,25 @@ const checkGuess = (guess, arr, letters) => {
     return false;
   }
 
-
-  return true
-}
+  return true;
+};
 
 const findWinner = (phraseArray, guesses, alphabet, currentGuess) => {
-  for (let i = (phraseArray.length - 1); i >= 0; i--) {
+  for (let i = phraseArray.length - 1; i >= 0; i--) {
     if (guesses.includes(phraseArray[i])) {
-      phraseArray.splice(i, 1)
+      phraseArray.splice(i, 1);
     }
     if (currentGuess === phraseArray[i]) {
-      phraseArray.splice(i, 1)
+      phraseArray.splice(i, 1);
     }
-
   }
 
   for (let j = 0; j < phraseArray.length; j++) {
     if (alphabet.includes(phraseArray[j])) {
-      return false
+      return false;
     }
   }
-  return true
-}
+  return true;
+};
 
-
-module.exports = {findWinner, checkGuess}
+module.exports = { findWinner, checkGuess };
