@@ -8,14 +8,12 @@ export default function SentenceItem(props) {
 
   useEffect(() => {
     if (allLetters.includes(currentLetter)) {
-      // console.log(currentLetter)
       if (currentGuess === currentLetter) {
         console.log("current guess is right")
         setShow(true)
       }
     }
     if (!allLetters.includes(currentLetter)) {
-      // console.log("not a letter")
       setShow(true)
     }
 
@@ -23,9 +21,5 @@ export default function SentenceItem(props) {
 
   return(<div className="letter">
     {(show === true) ? finalLetter : '__'}
-    {/* <br/>
-    {props.letter} */}
-    {/* <br/>
-    Current Guess: {currentGuess} */}
     </div>)
 }

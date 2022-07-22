@@ -1,8 +1,6 @@
 import ProgressQueenItem from './ProgressQueenItem'
-import {useState} from 'react'
 
 export default function ProgressQueen(props) {
-
 
   const queensArray = [
     'http://www.nokeynoshade.party/images/nina-flowers.jpg',
@@ -29,7 +27,6 @@ export default function ProgressQueen(props) {
   ]
 
   const displayPics = props.state.incorrect.map((guess, index) => {
-    // console.log("props.state", props.state)
 
     return (
       <ProgressQueenItem pic={queensArray[index]} key={index}/>

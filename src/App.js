@@ -1,8 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
 import ProgressQueen from './ProgressQueen';
-import Sentence from './Sentence';
-import Letters from './Letters';
 import Guess from './Guess';
 import Error from './Error';
 import {useEffect, useState} from 'react';
@@ -24,7 +21,6 @@ function App() {
     }
     
     fetchPhrase()
-    // console.log(state)
   }, [])
 
   
@@ -34,24 +30,9 @@ function App() {
       <header className="App-header">
         <h1>Qween-Man</h1>
         <h3>...can you guess the episode?</h3>
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
       </header>
       <main>
         {err && <Error />}
-
-        {/* <Sentence state={state}/> */}
-        {/* <Letters state={state}/> */}
         <ProgressQueen state={state}/>
         <Guess state={state} setState={setState}/>
         
