@@ -42,9 +42,8 @@ export default function ProgressQueen(props) {
 
   return(
     <section>
-              <h2 className='giant-text'>{displayLetters}</h2>
+      <h2 className='giant-text'>{displayLetters}</h2>
       <article className="qweens">
-
         {props.state.lettersGuessed && displayPics}
       </article>
     </section>
