@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { findWinner, checkGuess } from "./helpers";
+import {allLetters} from './constants'
 
 export default function LetterItem(props) {
   const [className, setClassName] = useState("letterGuesser");
@@ -15,7 +16,7 @@ export default function LetterItem(props) {
 
   const submitGuess = () => {
     let currentGuess = props.letter.toLowerCase();
-    if (checkGuess(currentGuess, state.lettersGuessed, state.allLetters)) {
+    if (checkGuess(currentGuess, state.lettersGuessed, allLetters)) {
       state.currentGuess = currentGuess;
       setState((prev) => ({
         ...prev,
@@ -34,7 +35,7 @@ export default function LetterItem(props) {
         findWinner(
           phraseArray,
           state.lettersGuessed,
-          state.allLetters,
+          allLetters,
           state.currentGuess
         )
       ) {

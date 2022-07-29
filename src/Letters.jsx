@@ -1,9 +1,10 @@
 import LetterItem from "./LetterItem";
+import {allLetters} from './constants.js'
 
 export default function Letters(props) {
   const { state, setState } = props;
 
-  const lettersDisplay = state.allLetters.map((letter, index) => {
+  const lettersDisplay = allLetters.map((letter, index) => {
     return (
       <LetterItem
         letter={letter}

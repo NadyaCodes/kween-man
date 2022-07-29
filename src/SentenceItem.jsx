@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import { allLetters } from "./constants";
 export default function SentenceItem(props) {
   const [show, setShow] = useState(false);
-  const { currentGuess, allLetters } = props.state;
+  const { currentGuess } = props.state;
 
   const currentLetter = props.letter.toLowerCase();
   let finalLetter = props.letter;
