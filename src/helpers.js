@@ -41,7 +41,7 @@ const findWinner = (phraseArray, guesses, alphabet, currentGuess) => {
   return true;
 };
 
-const submitGuess = (guess, state, letters, setState) => {
+export function submitGuess(guess, state, letters, setState){
   if (checkGuess(guess, state.lettersGuessed, letters)) {
     setState((prev) => ({
       ...prev,
@@ -65,4 +65,4 @@ const submitGuess = (guess, state, letters, setState) => {
   return alert("Please submit a valid guess");
 };
 
-module.exports = { findWinner, checkGuess, submitGuess };
+// module.exports = { findWinner, checkGuess, submitGuess };
