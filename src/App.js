@@ -12,6 +12,7 @@ function App() {
     currentGuess: "",
     incorrect: [],
     winner: false,
+    header: true
   });
   const [err, setErr] = useState("");
 
@@ -29,15 +30,23 @@ function App() {
     fetchPhrase();
   }, []);
 
+  useEffect(() => {
+    if (state.incorrect.length > 0) {
+      setState((prev) => ({...prev, header: false}))
+    }
+  }, [state.incorrect])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Qween-Man</h1>
-        <h3>...can you guess the episode?</h3>
-      </header>
+      {state.header === true &&
+            <header className="App-header">
+            <h1>Qween-Man</h1>
+            <h3>...can you guess the episode?</h3>
+          </header>
+      }
       <main>
         {err && <Error />}
-        <ProgressQueen state={state} />
+        <div className="losing-container"><ProgressQueen state={state} /></div>
         <Guess state={state} setState={setState} />
       </main>
     </div>

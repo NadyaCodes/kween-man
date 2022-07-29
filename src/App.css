@@ -34,7 +34,7 @@ code {
 .App-header {
   color: black;
   padding: 1rem;
-  background-color: #c1e688;
+  background-color: #cbe5a3;
 }
 
 h1 {
@@ -42,6 +42,11 @@ h1 {
   font-size: 5rem;
   margin-top: 1rem;
   margin-bottom: 0rem;
+}
+
+.losing-container {
+  background-color: #cbe5a3;
+  padding-bottom: .3rem;
 }
 .qweens {
   display: flex;
@@ -54,6 +59,7 @@ h1 {
   height: 11rem;
   width: 8rem;
   margin: 0.3rem 1rem;
+  background-color: white;
   border-width: 1rem;
   border-style: solid;
   border-image: var(--rainbow);
