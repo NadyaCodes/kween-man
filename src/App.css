@@ -80,7 +80,6 @@ h1 {
 .lettersDisplay {
   display: flex;
   justify-content: center;
-  flex: 2 0 50%;
 }
 
 .guessed {
