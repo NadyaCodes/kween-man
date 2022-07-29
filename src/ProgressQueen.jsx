@@ -1,8 +1,7 @@
 import ProgressQueenItem from "./ProgressQueenItem";
-import {queensArray, letterArray} from './constants'
+import { queensArray, letterArray } from "./constants";
 
 export default function ProgressQueen(props) {
-
   const displayPics = props.state.incorrect.map((guess, index) => {
     return <ProgressQueenItem pic={queensArray[index]} key={index} />;
   });

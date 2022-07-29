@@ -41,4 +41,28 @@ const findWinner = (phraseArray, guesses, alphabet, currentGuess) => {
   return true;
 };
 
-module.exports = { findWinner, checkGuess };
+const submitGuess = (guess, state, letters, setState) => {
+  if (checkGuess(guess, state.lettersGuessed, letters)) {
+    setState((prev) => ({
+      ...prev,
+      lettersGuessed: [...prev.lettersGuessed, guess],
+      currentGuess: guess,
+    }));
+    const phraseArray = [...state.phrase.toLowerCase()];
+
+    if (!phraseArray.includes(guess)) {
+      setState((prev) => ({
+        ...prev,
+        incorrect: [...prev.incorrect, guess],
+      }));
+    }
+
+    if (findWinner(phraseArray, state.lettersGuessed, letters, guess)) {
+      setState((prev) => ({ ...prev, winner: true }));
+    }
+    return;
+  }
+  return alert("Please submit a valid guess");
+};
+
+module.exports = { findWinner, checkGuess, submitGuess };

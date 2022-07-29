@@ -18,6 +18,5 @@ describe("App", () => {
     const { queryByText } = render(<App />);
     expect(queryByText(/qween-man/i)).toBeInTheDocument();
     expect(queryByText(/randomwordnotonsite/i)).not.toBeInTheDocument();
-  })
-
+  });
 });

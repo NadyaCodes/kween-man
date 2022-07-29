@@ -1,11 +1,9 @@
 import ReactPlayer from "react-player";
 import PlayAgain from "./PlayAgain";
 import { useEffect } from "react";
-import {videos} from './constants'
+import { videos } from "./constants";
 
 export default function Winner(props) {
-
-
   const videoIndex = Math.floor(Math.random() * videos.length);
 
   useEffect(() => {

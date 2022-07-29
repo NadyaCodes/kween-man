@@ -1,5 +1,5 @@
 import LetterItem from "./LetterItem";
-import {allLetters} from './constants.js'
+import { allLetters } from "./constants.js";
 
 export default function Letters(props) {
   const { state, setState } = props;

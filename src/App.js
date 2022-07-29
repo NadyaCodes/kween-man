@@ -4,13 +4,11 @@ import Guess from "./Guess";
 import Error from "./Error";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import {allLetters} from './constants'
 
 function App() {
   const [state, setState] = useState({
     lettersGuessed: [],
     phrase: "",
-    allLetters,
     currentGuess: "",
     incorrect: [],
     winner: false,

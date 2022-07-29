@@ -10,7 +10,6 @@ export default function SentenceItem(props) {
   useEffect(() => {
     if (allLetters.includes(currentLetter)) {
       if (currentGuess === currentLetter) {
-        console.log("current guess is right");
         setShow(true);
       }
     }

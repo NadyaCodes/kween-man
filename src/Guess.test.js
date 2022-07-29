@@ -1,20 +1,19 @@
 import { render, cleanup } from "@testing-library/react";
-import { act } from 'react-dom/test-utils';
+import { act } from "react-dom/test-utils";
 import Guess from "./Guess";
-import allLetters from './constants'
-window.scrollTo = jest.fn()
-
+import allLetters from "./constants";
+window.scrollTo = jest.fn();
 
 describe("Guess", () => {
   afterEach(cleanup);
   afterEach(() => {
-    jest.resetAllMocks()
-  })
+    jest.resetAllMocks();
+  });
   afterAll(() => {
-    jest.clearAllMocks()
-  })
+    jest.clearAllMocks();
+  });
 
-  let state ={
+  let state = {
     lettersGuessed: ["b", "c"],
     phrase: "Episode",
     allLetters,
@@ -23,18 +22,15 @@ describe("Guess", () => {
     winner: false,
   };
 
-
   it("renders without crashing", () => {
-    render(<Guess state={state}/>);
+    render(<Guess state={state} />);
   });
 
-
   it("renders Loser component if there's a loser", () => {
-
-    const { queryByText } = render(<Guess state={state}/>);
+    const { queryByText } = render(<Guess state={state} />);
     expect(queryByText(/LOST/i)).not.toBeInTheDocument();
 
-    state ={
+    state = {
       lettersGuessed: ["b", "c", "d", "e", "f", "g", "h", "i", "j"],
       phrase: "Episode",
       allLetters,
@@ -42,15 +38,15 @@ describe("Guess", () => {
       incorrect: ["b", "c", "d", "e", "f", "g", "h", "i", "j"],
       winner: false,
     };
-    render(<Guess state={state}/>)
+    render(<Guess state={state} />);
     expect(queryByText(/LOST/i)).toBeInTheDocument();
-  })
+  });
 
   it("renders Winner component if there's a winner", () => {
-    const { queryByText } = render(<Guess state={state}/>);
+    const { queryByText } = render(<Guess state={state} />);
     expect(queryByText(/condragulations/i)).not.toBeInTheDocument();
 
-    state ={
+    state = {
       lettersGuessed: ["b", "c", "d", "e", "f", "g", "h", "i", "j"],
       phrase: "Episode",
       allLetters,
@@ -60,11 +56,9 @@ describe("Guess", () => {
     };
 
     act(() => {
-      render(<Guess state={state}/>);
+      render(<Guess state={state} />);
     });
-    
+
     expect(queryByText(/condragulations/i)).toBeInTheDocument();
-
-  })
-
+  });
 });

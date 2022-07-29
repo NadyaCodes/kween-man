@@ -27,7 +27,6 @@ const allLetters = [
   "z",
 ];
 
-
 const queensArray = [
   "http://www.nokeynoshade.party/images/nina-flowers.jpg",
   "http://www.nokeynoshade.party/images/yara-sofia.jpg",
@@ -51,4 +50,4 @@ const videos = [
   "https://www.youtube.com/watch?v=N3RB_56WziA",
 ];
 
-module.exports = { allLetters, queensArray, letterArray, videos }
+module.exports = { allLetters, queensArray, letterArray, videos };

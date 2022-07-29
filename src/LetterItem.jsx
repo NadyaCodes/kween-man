@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { findWinner, checkGuess } from "./helpers";
-import {allLetters} from './constants'
+import { allLetters } from "./constants";
+import { submitGuess } from "./helpers";
 
 export default function LetterItem(props) {
   const [className, setClassName] = useState("letterGuesser");
@@ -14,41 +14,14 @@ export default function LetterItem(props) {
     }
   }, [state.lettersGuessed]);
 
-  const submitGuess = () => {
-    let currentGuess = props.letter.toLowerCase();
-    if (checkGuess(currentGuess, state.lettersGuessed, allLetters)) {
-      state.currentGuess = currentGuess;
-      setState((prev) => ({
-        ...prev,
-        lettersGuessed: [...prev.lettersGuessed, currentGuess],
-      }));
-      const phraseArray = [...state.phrase.toLowerCase()];
-
-      if (!phraseArray.includes(currentGuess)) {
-        setState((prev) => ({
-          ...prev,
-          incorrect: [...prev.incorrect, currentGuess],
-        }));
-      }
-
-      if (
-        findWinner(
-          phraseArray,
-          state.lettersGuessed,
-          allLetters,
-          state.currentGuess
-        )
-      ) {
-        setState((prev) => ({ ...prev, winner: true }));
-      }
-      return;
-    }
-    return alert("Please submit a valid guess");
-  };
-
+  const currentGuess = props.letter.toLowerCase();
   return (
     <div className={className}>
-      <button onClick={() => submitGuess()}>{props.letter}</button>
+      <button
+        onClick={() => submitGuess(currentGuess, state, allLetters, setState)}
+      >
+        {props.letter}
+      </button>
     </div>
   );
 }
