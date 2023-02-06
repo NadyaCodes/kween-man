@@ -28,15 +28,15 @@ const allLetters = [
 ];
 
 const queensArray = [
-  "http://www.nokeynoshade.party/images/nina-flowers.jpg",
-  "http://www.nokeynoshade.party/images/yara-sofia.jpg",
-  "http://www.nokeynoshade.party/images/latrice-royale.jpg",
-  "http://www.nokeynoshade.party/images/benda-la-creme.jpg",
-  "https://vignette4.wikia.nocookie.net/logosrupaulsdragrace/images/3/34/CynthiaS9.jpg",
-  "http://www.nokeynoshade.party/images/valentina.jpg",
-  "http://www.nokeynoshade.party/images/monet_x_change.jpg",
-  "http://www.nokeynoshade.party/images/ivy-winters.jpg",
-  "https://www.nokeynoshade.party/images/nina-west.jpg",
+  "https://static.wikia.nocookie.net/logosrupaulsdragrace/images/b/bc/AmethystS15CastMug.jpg",
+  "https://static.wikia.nocookie.net/logosrupaulsdragrace/images/c/c7/AnetraS15CastMug.jpg",
+  "https://static.wikia.nocookie.net/logosrupaulsdragrace/images/7/72/IreneDuboisS15CastMug.jpg",
+  "https://static.wikia.nocookie.net/logosrupaulsdragrace/images/7/70/PrincessPoppyS15CastMug.jpg",
+  "https://static.wikia.nocookie.net/logosrupaulsdragrace/images/1/15/SpiceS15CastMug.jpg",
+  "https://static.wikia.nocookie.net/logosrupaulsdragrace/images/0/0a/SugarS15CastMug.jpg",
+  "https://static.wikia.nocookie.net/logosrupaulsdragrace/images/c/c0/RobinFierceS15CastMug.jpg",
+  "https://static.wikia.nocookie.net/logosrupaulsdragrace/images/6/60/SashaColbyS15CastMug.jpg",
+  "https://static.wikia.nocookie.net/logosrupaulsdragrace/images/3/3e/MistressIsabelleBrooksS15CastMug.jpg",
 ];
 
 const letterArray = ["Q", "W", "E", "E", "N", "-", "M", "A", "N"];

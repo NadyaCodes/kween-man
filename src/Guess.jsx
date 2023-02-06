@@ -14,7 +14,7 @@ export default function Guess(props) {
       <section className="lostContainer">
         <h1>YOU LOST!</h1>
         <PlayAgain />
-        <img src="https://www.nokeynoshade.party/images/nina-west.jpg" />
+        <img src="https://static.wikia.nocookie.net/logosrupaulsdragrace/images/e/e5/Spoilers.gif" />
       </section>
     );
   }
